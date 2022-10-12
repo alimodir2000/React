@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import Card from '../UI/Card';
 import Button from '../UI/Button';
 import ErrorModal from '../UI/ErrorModal';
 import classes from './AddUser.module.css';
+import Wrapper from '../Helpers/Wrapper';
 
 const AddUser = (props) => {
   const [enteredUsername, setEnteredUsername] = useState('');
   const [enteredAge, setEnteredAge] = useState('');
   const [error, setError] = useState();
 
+
+  // TODO: useRef is another hook
+  const inputNameRef = useRef();
+  const inputAgeRef = useRef();
+
   const addUserHandler = (event) => {
     event.preventDefault();
+    console.log(inputNameRef);
+    console.log(inputNameRef.current.value);
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       setError({
         title: 'Invalid input',
@@ -44,7 +52,8 @@ const AddUser = (props) => {
   };
 
   return (
-    <div>
+    <Wrapper>
+      {/* TODO: <></> and <React.Fragment></React.Fragment> have the same application */}
       {error && (
         <ErrorModal
           title={error.title}
@@ -60,6 +69,7 @@ const AddUser = (props) => {
             type="text"
             value={enteredUsername}
             onChange={usernameChangeHandler}
+            ref={inputNameRef}
           />
           <label htmlFor="age">Age (Years)</label>
           <input
@@ -67,11 +77,12 @@ const AddUser = (props) => {
             type="number"
             value={enteredAge}
             onChange={ageChangeHandler}
+            ref={inputAgeRef}
           />
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 };
 
