@@ -1,5 +1,7 @@
 import React from 'react'
 import { IoAddCircleOutline } from "react-icons/io5";
+import Modal from '../Modal/Modal';
+import CreateTransactionForm from '../CreateTransaction/CreateTransactionForm';
 
 export const Balance = () => {
     return (
@@ -13,10 +15,14 @@ export const Balance = () => {
                         <p className='text-red-500'>Expense: 0.00</p>
                     </div>
                 </div>
-                <button className='bg-green-500 flex gap-2 text-white px-4 py-2 rounded-xl hover:bg-green-600 hover:scale-110 transition-all duration-300'>
+                <Modal size='lg' button={ <button className='bg-green-500 flex gap-2 text-white px-4 py-2 rounded-xl hover:bg-green-600 hover:scale-110 transition-all duration-300'>
                     <IoAddCircleOutline className='w-6 h-6' />
                     Add Transaction
-                </button>
+                </button>} >
+                <CreateTransactionForm />
+                </Modal>
+
+               
             </div>
         </div>
     )
