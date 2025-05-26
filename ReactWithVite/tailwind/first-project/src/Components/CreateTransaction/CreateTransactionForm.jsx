@@ -35,31 +35,42 @@ const CreateTransactionForm = () => {
                 </div>
                 <div className=''>
                     <lable htmlFor="amount" className="block text-gray-700 mb-2">Amount</lable>
-                    <input type="number" name="amount" id="amount" 
-                    className='w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' />
+                    <input type="number" name="amount" id="amount"
+                        className='w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' />
                 </div>
                 <div className=''>
                     <lable htmlFor="category" className="block text-gray-700 mb-2">Category</lable>
-                    <select name="category" id="category" required
+                    <select name="category" id="category" required value={formData.category}
                         className='w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 '
                     >
-                       <option>Select a Category</option>
-                       {
+                        <option>Select a Category</option>
+                        {
                             categories[formData.type].map((cat) => {
-                                return(
+                                return (
                                     <option key={cat} value={cat}>{cat}</option>
                                 )
 
                             })
 
-                       }
+                        }
 
                     </select>
                 </div>
                 <div className=''>
                     <lable htmlFor="description" className="block text-gray-700 mb-2">Description</lable>
-                    <textarea  name="description" id="description" 
-                    className='w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' />
+                    <textarea name="description" id="description" value={formData.description}
+                        className='w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' />
+                </div>
+
+                <div className=''>
+                    <lable htmlFor="date" className="block text-gray-700 mb-2">Date</lable>
+                    <input type='date' name="date" id="date" value={formData.date}
+                        className='w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' />
+                </div>
+                <div className=''>
+                    <button className={`${formData.type === "Expense" ? "bg-red-500 hover:bg-red-600" : "bg-green-500 hover:bg-green-600"} font-bold w-full rounded-lg text-white mt-2 p-2`}>
+                        Add {formData.type === "Expense" ? "Expense" : "Income"}
+                    </button>
                 </div>
             </form>
 
