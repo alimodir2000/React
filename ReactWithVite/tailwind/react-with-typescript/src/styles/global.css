@@ -1,0 +1,23 @@
+#root {
+    background: hsla(350,100%, 55%, 1);
+
+    background: linear-gradient(
+        135deg,
+        hsla(350, 100%, 55%, 1) 0%,
+        hsla(350, 100%, 55%, 0.8) 50%,
+        hsla(350, 100%, 55%, 0.6) 75%
+    );
+
+    background: -moz-linear-gradient(
+        135deg,
+        hsla(350, 100%, 55%, 1) 0%,
+        hsla(350, 100%, 55%, 0.8) 50%,
+        hsla(350, 100%, 55%, 0.6) 75%
+    );
+
+    background: -webkit-gradient( 
+        135deg,
+        hsla(350, 100%, 55%, 1) 0%,
+        hsla(350, 100%, 55%, 0.8) 50%,
+        hsla(350, 100%, 55%, 0.6) 75%);
+}

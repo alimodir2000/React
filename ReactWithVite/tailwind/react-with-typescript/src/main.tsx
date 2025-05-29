@@ -1,14 +1,18 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
 import MantineUIProvider from './providers/MantineUIProvider'
+import MainLayout from './layout/MainLayout'
+import './styles/global.css'
+import QuizPage from './pages/QuizPage'
 
 
 createRoot(document.getElementById('root')!).render(
 
   <StrictMode>
     <MantineUIProvider>
-      <App />
+      <MainLayout>
+       <QuizPage />
+      </MainLayout>
     </MantineUIProvider>
   </StrictMode>
 
