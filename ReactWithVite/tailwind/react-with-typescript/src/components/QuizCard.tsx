@@ -42,7 +42,7 @@ const QuizCard = ({ children, question, options, correctAnswer, onAnswer, onNext
                             }}
                             size="md"
                             fw={350}
-                            variant={selectedAnswer === option ? "filled" : "outline"}
+                            variant={selectedAnswer === option ? "gradient" : "outline"}
                             color={selectedAnswer === option ? "red" : "gray"}
                             radius={"xl"}
                             c={selectedAnswer === option ? "white" : "black"}
