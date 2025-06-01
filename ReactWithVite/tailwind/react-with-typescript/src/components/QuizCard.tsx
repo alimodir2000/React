@@ -9,11 +9,12 @@ interface QuizCardProps {
     correctAnswer: string;
     onAnswer: (answer: string) => void;
     onNext: () => void;
+    isLastQuestion: boolean;
 }
 
 
-const QuizCard = ({ children, question, options, correctAnswer, onAnswer, onNext }: QuizCardProps) => {
-
+const QuizCard = ({ children, question, options, correctAnswer, onAnswer, onNext , isLastQuestion}: QuizCardProps) => {
+    
     const [selectedAnswer, setSelectedAnswer] = useState<string>("");
 
     const sampleOptions: string[] = [
@@ -31,14 +32,15 @@ const QuizCard = ({ children, question, options, correctAnswer, onAnswer, onNext
             direction="column"
             align="start"
             justify="center">
-            <Text size="xl"  weight={500} mb="md" >sdfsdfsdf</Text>
+            <Text size="xl"  weight={500} mb="md" >{question}</Text>
             <Flex direction={"column"} gap={10} miw={"90%"} >
                 {
-                    sampleOptions.map((option, index) => {
+                    options.map((option, index) => {
                         return <Button
                             key={index}
                             onClick={() => {
                                 setSelectedAnswer(option);
+                                onAnswer(option);
                             }}
                             size="md"
                             fw={350}
@@ -63,7 +65,7 @@ const QuizCard = ({ children, question, options, correctAnswer, onAnswer, onNext
                         ml={10}
                         rightSection={<FaArrowRight />}
                     >
-                        Next Question
+                       {isLastQuestion !== false ? "Next" : "Submit"}
                     </Button>
                 </Flex>
             </Flex>

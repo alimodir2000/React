@@ -1,8 +1,15 @@
 import { Button, Text } from "@mantine/core"
 import QuizContainer from "../components/QuizContainer"
+import { useNavigate } from "react-router"
+import useQuizStore from "../store/quiz-store";
 
 
 const QuziStartPage = () => {
+    const navigate = useNavigate();
+    const { quizData } = useQuizStore();
+    const nagivateToStartQuiz = () => {
+        navigate('/quiz');
+    }
     return (
         <QuizContainer>
             <Text
@@ -15,18 +22,18 @@ const QuziStartPage = () => {
             <Text
                 fw={500}
                 fz="h4">
-                General-Knowledge
+                {quizData.category}
             </Text>
             <Text
                 fw={500}
                 fz="md">
-                Test your knowledge with a variety of questions.
+                {quizData.description}
             </Text>
 
             <Text
                 fw={500}
                 fz="md">
-                8 Correct Answers!
+                {quizData.passScore} Correct Answers!
             </Text>
 
             <Button
@@ -35,7 +42,7 @@ const QuziStartPage = () => {
                 size="md"
                 mt="md"
                 radius={"xl"}
-                onClick={() => console.log("Start Quiz Clicked")}>
+                onClick={nagivateToStartQuiz}>
                 Start
             </Button>
 
