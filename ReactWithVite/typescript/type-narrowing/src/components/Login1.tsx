@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { hasAtLeastNNonAlphanumericCharacters, hasEnoughLenght, hasTwoSameNonAlphanumericCharactesInTheRow, isEmpty, isEqual, isValidEmail, hasAtLeastNLowercaseCharacters, hasAtLeastNUppercaseCharacters } from "../validation";
+import { mockFetch, type RequestDto } from "../mock-api-call";
 
 export interface FormData {
     name: string;
@@ -23,6 +24,7 @@ export interface IsTouched {
 }
 
 export default function Login1() {
+    const [submitState, setSubmitStatue] = useState<boolean>(false);
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -46,7 +48,7 @@ export default function Login1() {
             if (isEmpty(formData.name)) {
                 error.name = "Name should not be empty!";
             }
-            if (!hasEnoughLenght(formData.name, 4)) {
+            else if (!hasEnoughLenght(formData.name, 4)) {
                 error.name = "Name should have at least 4 characters";
             }
         }
@@ -54,29 +56,29 @@ export default function Login1() {
         if (isTouched.email) {
             if (isEmpty(formData.email))
                 error.email = "Email should not be empty!";
-            if (!isValidEmail(formData.email))
+            else if (!isValidEmail(formData.email))
                 error.email = "Email is not valid!";
         }
 
         if (isTouched.password) {
             if (isEmpty(formData.password))
                 error.password = "Password cannot be empty!";
-            if (!hasEnoughLenght(formData.password, 8))
+            else if (!hasEnoughLenght(formData.password, 8))
                 error.password = "Password cannot be less than 8 characters!";
-            if (!hasAtLeastNNonAlphanumericCharacters(formData.password, 2))
+            else if (!hasAtLeastNNonAlphanumericCharacters(formData.password, 2))
                 error.password = "Password should have at least 2 non alphanumeric characters!";
-            if (!hasAtLeastNLowercaseCharacters(formData.password))
+            else if (!hasAtLeastNLowercaseCharacters(formData.password))
                 error.password = "Password should have at least 1 lowercase character!";
-            if (!hasAtLeastNUppercaseCharacters(formData.password))
+            else if (!hasAtLeastNUppercaseCharacters(formData.password))
                 error.password = "Password should have at least 1 uppercase character!";
-            if (hasTwoSameNonAlphanumericCharactesInTheRow(formData.password))
+            else if (hasTwoSameNonAlphanumericCharactesInTheRow(formData.password))
                 error.password = "Password should not have two same non-alphanumric charcters in a row!";
         }
 
         if (isTouched.confirmPassword) {
-            if(isEmpty(formData.confirmPassword))
+            if (isEmpty(formData.confirmPassword))
                 error.confirmedPassword = "Confirm Password should not be empty!"
-            if (!isEqual(formData.password, formData.confirmPassword))
+            else if (!isEqual(formData.password, formData.confirmPassword))
                 error.confirmedPassword = "Confirm Password should match Password!";
         }
 
@@ -84,6 +86,46 @@ export default function Login1() {
 
 
     }, [isTouched, formData]);
+
+
+    const doesAllInputsTouched = useMemo<boolean>(() => {
+        return isTouched.name === true && isTouched.email === true && isTouched.password === true && isTouched.confirmPassword === true;
+    }, [isTouched]);
+
+
+    const isFormValid = useMemo<boolean>(() => {
+        return doesAllInputsTouched && validateInputs.name === null && validateInputs.email === null && validateInputs.password === null && validateInputs.confirmedPassword === null;
+    }, [doesAllInputsTouched, validateInputs]);
+
+    const handleSubmit = async () => {
+        setSubmitStatue(true);
+
+        if (isFormValid) {
+            const requestDto: RequestDto = {
+                email: formData.email,
+                name: formData.name,
+                password: formData.password
+            };
+
+            try {
+                const response = await mockFetch("/api/create-account");
+                const data = await response.json();
+                alert("Account Created Successfully!");
+            }
+            catch (err) {
+                alert("Create acount failed!");
+                console.log(err);
+            }
+
+        }
+        else {
+            alert("Form data is not valid!")
+        }
+
+
+        setSubmitStatue(false);
+
+    }
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -152,9 +194,9 @@ export default function Login1() {
                             onChange={handleChange}
                             onFocus={handleFocus} />
                         {validateInputs.confirmedPassword && (<p className="validation-error">{validateInputs.confirmedPassword}</p>)}
-                        {isTouched.confirmedPassword && !validateInputs.confirmedPassword && (<p className="validation-success">✔️ Confirmed password matches password.</p>)}
+                        {isTouched.confirmPassword && !validateInputs.confirmedPassword && (<p className="validation-success">✔️ Confirmed password matches password.</p>)}
                     </div>
-                    <button className="submit-btn" type="button">Create Account</button>
+                    <button className="submit-btn" onClick={handleSubmit} type="button" disabled={submitState} >Create Account</button>
                 </form>
 
 
