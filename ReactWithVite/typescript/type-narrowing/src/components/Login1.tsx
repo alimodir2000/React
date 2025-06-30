@@ -94,7 +94,8 @@ export default function Login1() {
 
 
     const isFormValid = useMemo<boolean>(() => {
-        return doesAllInputsTouched && validateInputs.name === null && validateInputs.email === null && validateInputs.password === null && validateInputs.confirmedPassword === null;
+       
+        return doesAllInputsTouched && validateInputs.name === undefined && validateInputs.email === undefined && validateInputs.password === undefined && validateInputs.confirmedPassword === undefined;
     }, [doesAllInputsTouched, validateInputs]);
 
     const handleSubmit = async () => {
