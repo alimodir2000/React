@@ -1,5 +1,5 @@
 {
-  "name": "type-narrowing",
+  "name": "login-real",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,12 +8,11 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
-    "jest": "^30.0.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -21,9 +20,11 @@
     "@eslint/js": "^9.29.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
+    "@vitest/ui": "^3.2.4",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",

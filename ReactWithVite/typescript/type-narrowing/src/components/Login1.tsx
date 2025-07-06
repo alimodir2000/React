@@ -143,7 +143,7 @@ export default function Login1() {
     return (
         <div className="container">
             <div className="card">
-                <form>
+                <form data-testid="test-form">
                     <h2>Create an Account</h2>
                     <div className="form-group" >
                         <label>Name</label>
@@ -159,9 +159,10 @@ export default function Login1() {
                         {isTouched.name && !validateInputs.name && (<p className="validation-success">✔️ Name is valid.</p>)}
                     </div>
 
-                    <div className="form-group" >
+                    <div className="form-group" data-testid="email-group" >
                         <label>Email</label>
                         <input
+                            data-testid="email"
                             type="email"
                             name="email"
                             placeholder="Enter your email"
