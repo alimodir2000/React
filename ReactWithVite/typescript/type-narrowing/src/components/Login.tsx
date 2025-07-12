@@ -5,7 +5,7 @@ export default function Login(){
         <>
             <div className="card">
                 <h2>✔️ Create Account</h2>
-                <form>
+                <form >
                     <div className="form-group">
                         <label>Name</label>
                         <input className="error" type="text" id="name" required />
