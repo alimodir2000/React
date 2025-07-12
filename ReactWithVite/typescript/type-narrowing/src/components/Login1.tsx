@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, type ReactNode } from "react";
 import { hasAtLeastNNonAlphanumericCharacters, hasEnoughLenght, hasTwoSameNonAlphanumericCharactesInTheRow, isEmpty, isEqual, isValidEmail, hasAtLeastNLowercaseCharacters, hasAtLeastNUppercaseCharacters } from "../validation";
 import { mockFetch, type RequestDto } from "../mock-api-call";
 
@@ -22,6 +22,7 @@ export interface IsTouched {
     password?: boolean;
     confirmPassword?: boolean;
 }
+
 
 export default function Login1() {
     const [submitState, setSubmitStatue] = useState<boolean>(false);

@@ -1,0 +1,14 @@
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\ManageUserApi.exe
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\appsettings.Development.json
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\appsettings.json
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\ManageUserApi.dll
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\ManageUserApi.deps.json
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\ManageUserApi.runtimeconfig.json
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\ManageUserApi.pdb
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\Microsoft.EntityFrameworkCore.InMemory.dll
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\Microsoft.OpenApi.dll
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
