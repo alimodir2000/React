@@ -1,0 +1,77 @@
+.container {
+  background-color: white;
+  border: 1px solid rgb(67, 66, 66);
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 5px rgb(65, 65, 65);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(67, 66, 66);
+  padding: 30px;
+}
+.container button {
+  background-color: rgb(220, 220, 220);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: large;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid rgb(175, 175, 175);
+}
+
+.container button:hover {
+  cursor: pointer;
+  background-color: rgb(150, 150, 150);
+  color: white;
+}
+
+.container h2 {
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgb(50, 50, 50, 0.2);
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 5px;
+  font-size: medium;
+  font-weight: bold;
+  box-shadow: 1px 1px 5px 1px rgb(67, 66, 66, 0.2);
+  height: 30px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: blue;
+}
+
+.form-group .error {
+  border-color: red;
+  border-width: 2px;
+  color: red;
+}
+
+.form-group .valid {
+  border-color: green;
+  border-width: 2px;
+  color: green;
+}
+
+.italic {
+  font-style: italic;
+}
