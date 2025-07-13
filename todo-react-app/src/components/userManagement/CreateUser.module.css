@@ -72,6 +72,26 @@
   color: green;
 }
 
+.validation-error {
+  color: red;
+  margin-top: 0;
+  font-size: small;
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.validation-success {
+  color: green;
+  margin-top: 0;
+  font-size: small;
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .italic {
   font-style: italic;
 }
