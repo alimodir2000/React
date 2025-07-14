@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ManageUserApi.Data;
 using ManageUserApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace UserApi.Controllers
 {
@@ -26,6 +27,13 @@ namespace UserApi.Controllers
             _context.Users.Add(user);
             _context.SaveChanges();
             return Ok("User registered successfully.");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers() {
+           
+            var users = await _context.Users.ToListAsync();
+            return Ok(users);
         }
 
         [HttpPost("login")]

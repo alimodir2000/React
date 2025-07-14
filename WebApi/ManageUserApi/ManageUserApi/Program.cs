@@ -18,8 +18,15 @@ namespace ManageUserApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddCors();
+
             var app = builder.Build();
 
+            app.UseCors(b => b
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowAnyOrigin()
+            );
             app.UseSwagger();
             app.UseSwaggerUI();
 

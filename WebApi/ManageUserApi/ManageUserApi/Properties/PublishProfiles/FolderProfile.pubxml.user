@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>G:\Ali\Projects\React\WebApi\ManageUserApi\ManageUserApi\bin\Release\net7.0\publish\</_PublishTargetUrl>
-    <History>True|2025-07-12T14:58:04.5159295Z;True|2025-07-12T18:25:19.1359960+03:30;</History>
+    <History>True|2025-07-14T14:53:19.7313411Z;True|2025-07-14T18:16:31.5874443+03:30;True|2025-07-12T18:28:04.5159295+03:30;True|2025-07-12T18:25:19.1359960+03:30;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

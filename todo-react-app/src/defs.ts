@@ -1,0 +1,1 @@
+export const create_user_url = "http://localhost:8074/api/Auth/register";
