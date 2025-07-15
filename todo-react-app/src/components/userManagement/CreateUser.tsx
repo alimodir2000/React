@@ -99,6 +99,23 @@ export default function CreateUser() {
                 message: msg
             }
         }
+        else {
+            if (formData.name) {
+                if (formData.name && formData.name.length > 3) {
+                    msg = "✔️ Name is valid";
+                    isValid = true;
+                }
+                else {
+                    msg = "⚫ Name should not be empty and has at least 3 characters!";
+                    isValid = false;
+                }
+
+                validation.name = {
+                    isValid: isValid,
+                    message: msg
+                }
+            }
+        }
 
         if (isTouched.email) {
             if (IsEmailValid(formData.email)) {
@@ -112,6 +129,21 @@ export default function CreateUser() {
             validation.email = {
                 isValid: isValid,
                 message: msg
+            }
+        } else {
+            if (formData.email) {
+                if (IsEmailValid(formData.email)) {
+                    msg = "✔️ Email is valid";
+                    isValid = true;
+                }
+                else {
+                    msg = "⚫ Enter a valid email";
+                    isValid = false;
+                }
+                validation.email = {
+                    isValid: isValid,
+                    message: msg
+                }
             }
         }
 
@@ -127,6 +159,21 @@ export default function CreateUser() {
             validation.phone = {
                 isValid: isValid,
                 message: msg
+            }
+        } else {
+            if (formData.phone) {
+                if (IsPhoneValid(formData.phone)) {
+                    msg = "✔️ Phone is valid";
+                    isValid = true;
+                }
+                else {
+                    msg = "⚫ Enter a valid phone number";
+                    isValid = false;
+                }
+                validation.phone = {
+                    isValid: isValid,
+                    message: msg
+                }
             }
         }
 
@@ -144,6 +191,22 @@ export default function CreateUser() {
                 message: msg
             }
         }
+        else {
+            if (formData.password) {
+                if (IsPasswordValid(formData.password)) {
+                    msg = "✔️ Password is valid";
+                    isValid = true;
+                }
+                else {
+                    msg = "⚫ Password shoud has at least 8 chars, 1 uppercase, 1 number, 1 non alphanumeric character and no two same non alphanumeric characters be in a row!";
+                    isValid = false;
+                }
+                validation.password = {
+                    isValid: isValid,
+                    message: msg
+                }
+            }
+        }
 
         if (isTouched.confirmPassword) {
             if (!formData.confirmPassword || formData.confirmPassword !== formData.password) {
@@ -157,6 +220,21 @@ export default function CreateUser() {
             validation.confirmPassword = {
                 isValid: isValid,
                 message: msg
+            }
+        } else {
+            if (formData.confirmPassword) {
+                if (!formData.confirmPassword || formData.confirmPassword !== formData.password) {
+                    msg = "⚫ Confirm password should match password!"
+                    isValid = false;
+                }
+                else {
+                    msg = "✔️ Confirmed password matches password";
+                    isValid = true;
+                }
+                validation.confirmPassword = {
+                    isValid: isValid,
+                    message: msg
+                }
             }
         }
 
