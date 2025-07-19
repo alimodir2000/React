@@ -2,10 +2,17 @@ main {
   padding-top: 32px;
 }
 
+
+.background{
+    position: fixed;
+    z-index: -1;
+}
+
 .package {
   width: 80%;
   margin: 16px 0;
   border-left: none;
+  position: relative;
 }
 
 .package a {
@@ -28,6 +35,18 @@ main {
 
 .package__subtitle {
   color: rgb(103, 103, 103);
+}
+
+.package__badge{
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 15px 15px;
+    font-size: 14px;
+    
 }
 
 .package__info {

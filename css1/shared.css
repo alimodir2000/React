@@ -11,6 +11,12 @@ body {
     width: 100%;
     background: #2ddf5c;
     padding: 8px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 2px 2px 8px 2px rgb(10, 10, 10, 0.4);
+
 }
 
 .main-header > div {
