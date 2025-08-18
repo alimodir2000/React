@@ -21,7 +21,7 @@ function cartReducer(state, action) {
 
       updatedItems[existingItemIndex] = updatedItem;
     } else {
-      updatedItems.push(action.item);
+      updatedItems.push({ ...action.item, quantity: 1 });
     }
     return { ...state, items: updatedItems };
   }
@@ -52,11 +52,11 @@ function cartReducer(state, action) {
 
 export function CardContextProvider({ children }) {
   const [cart, dispatchCartAction] = useReducer(cartReducer, { items: [] });
-  
+
   const cartContext = {
     items: cart.items,
     addItem: addItem,
-    removeItem: removeItem
+    removeItem: removeItem,
   };
 
   function addItem(item) {
@@ -64,7 +64,7 @@ export function CardContextProvider({ children }) {
   }
 
   function removeItem(id) {
-    dispatchCartAction({type:"rem_item", id});
+    dispatchCartAction({ type: "rem_item", id });
   }
 
   return (
