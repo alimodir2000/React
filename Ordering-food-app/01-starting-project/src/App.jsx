@@ -5,6 +5,7 @@ import { CardContextProvider } from "./store/CartContext";
 import UserProgressContext, {
   UserProgressContextProvider,
 } from "./store/UserProgressContext";
+import { Checkout } from "./components/Checkout";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <Meals />
         <Cart />
+        <Checkout/>
       </UserProgressContextProvider>
     </CardContextProvider>
   );

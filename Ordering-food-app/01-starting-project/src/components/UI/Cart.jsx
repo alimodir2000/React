@@ -10,6 +10,8 @@ export default function Cart() {
   const cartContext = useContext(CardContext);
   const userProgressContext = useContext(UserProgressContext);
 
+  console.log(cartContext.items.length);
+
   const cardTotal = cartContext.items.reduce(
     (totalPrice, item) => totalPrice + item.price * item.quantity,
     0
@@ -19,8 +21,16 @@ export default function Cart() {
     userProgressContext.hideCart();
   }
 
+  function handleCheckout() {
+    userProgressContext.showCheckout();
+  }
+
   return (
-    <Modal className="cart" open={userProgressContext.progress === "cart"}>
+    <Modal
+      className="cart"
+      open={userProgressContext.progress === "cart"}
+      onClose={userProgressContext.progress === "cart" ? handleCloseCart : null}
+    >
       <h2>Your Cart</h2>
       <ul>
         {cartContext.items.map((item) => (
@@ -39,7 +49,12 @@ export default function Cart() {
         <Button onClick={handleCloseCart} textOnly>
           Close
         </Button>
-        {cartContext.items.legnth > 0  && (<Button textOnly={false}>Go to Checkout</Button>)}
+
+        {cartContext.items.length > 0 && (
+          <Button onClick={handleCheckout} textOnly={false}>
+            Go to Checkout
+          </Button>
+        )}
       </p>
     </Modal>
   );
