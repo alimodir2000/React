@@ -247,7 +247,7 @@ h1 {
   padding: 1rem;
   width: 80%;
   max-width: 40rem;
-  animation: slide-up-fade-in 0.3s ease-in-out forwards;
+  /* 11animation: slide-up-fade-in 0.3s ease-in-out forwards; */
 
 }
 
