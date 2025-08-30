@@ -1,0 +1,43 @@
+.main-form-container {
+    display: flex;
+    gap:1rem;
+    flex-direction: column;
+}
+
+.main-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+form .row{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.row input,
+.row select{
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    border: 2px solid black;
+}
+
+.row input.error,
+.row select.error{
+    border-color: red;
+}
+
+.row input.success,
+.row select.success{
+    border-color: green;
+}
+
+.row button {
+    background-color: blue;
+    color: white;
+}
+
+.row button:hover {
+    background-color: rgb(1, 1, 220);
+}
