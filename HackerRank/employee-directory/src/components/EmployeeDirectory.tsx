@@ -2,10 +2,11 @@ import React from "react";
 import EmployeeForm from "./EmployeeForm";
 import EmployeeFilter from "./EmployeeFilter";
 import EmployeeList from "./EmployeeList";
+import style from "./EmployeeDirectory.module.css"
 
 const EmployeeDirectory = () => {
   return (
-    <div>
+    <div className={style["main-container"]}>
       <EmployeeForm />
       <EmployeeFilter />
       <EmployeeList />

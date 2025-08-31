@@ -1,6 +1,13 @@
-ul{
-    padding: 1rem;
+.main-form-container {
+
+}
+
+.main-form-container ul{
+
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
 }
 
 li{
@@ -11,6 +18,7 @@ li{
     justify-content: space-between;
     border: 1px solid gainsboro;
     padding: 1rem;
+    width: 100%;
 }
 
 li:hover {

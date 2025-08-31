@@ -5,7 +5,7 @@ import style from "./EmployeeList.module.css";
 const EmployeeList = () => {
   const { getFilteredEmployees, removeEmployee } = useContext(EmployeeContext);
   return (
-    <div className="layout-column justify-content-center align-items-center">
+    <div className={style["main-form-container"]} >
       <h3>Employee List</h3>
 
       {getFilteredEmployees().length === 0 ? (
@@ -14,7 +14,7 @@ const EmployeeList = () => {
         <ul data-testid="employee-list">
           {getFilteredEmployees().map((emp) => {
             return (
-              <li className="" data-testid="employee-item" key={emp.id}>
+              <li data-testid="employee-item" key={emp.id}>
                 <div className="employee-details">
                   <strong>{emp.name}</strong> - {emp.role} ({emp.dep}) -{" "}
                   {emp.email}
