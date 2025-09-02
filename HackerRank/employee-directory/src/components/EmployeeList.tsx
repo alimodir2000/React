@@ -12,10 +12,10 @@ const EmployeeList = () => {
         <p>No Employees Added.</p>
       ) : (
         <ul data-testid="employee-list">
-          {getFilteredEmployees().map((emp) => {
+          {getFilteredEmployees().map((emp, index) => {
             return (
               <li data-testid="employee-item" key={emp.id}>
-                <div className="employee-details">
+                <div className="employee-details" data-testid={`employee-detail-${index}`}>
                   <strong>{emp.name}</strong> - {emp.role} ({emp.dep}) -{" "}
                   {emp.email}
                 </div>
