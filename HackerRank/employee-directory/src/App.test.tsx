@@ -71,10 +71,8 @@ describe("App Tests", () => {
     await user.type(emailInput,"ali@modirkhazeni.com");
 
     await user.click(submitButton);
-
-
+    
     expect(alertSpy).not.toHaveBeenCalled();
-
     expect(screen.queryAllByTestId("employee-item")).toHaveLength(1);
     expect(screen.queryByTestId("employee-detail-0")).toBeInTheDocument();
 
